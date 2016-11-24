@@ -4,10 +4,12 @@ from __future__ import unicode_literals
 from django.shortcuts import render
 from django.shortcuts import redirect
 from django.shortcuts import get_object_or_404
-from django.contrib.auth.models import User
+from django.contrib.auth import get_user_model
 from django.contrib.auth.decorators import login_required
 
 from .forms import ProfileForm
+
+User = get_user_model()
 
 
 def profile(request, user_id=None, template_name="lbforum/profile/profile.html"):
