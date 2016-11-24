@@ -283,5 +283,10 @@ def update_last_post(sender, instance, created, **kwargs):
         forum.update_state_info(last_post=post)
 
 
-# post_save.connect(create_user_profile, sender=User)
 post_save.connect(update_last_post, sender=Post)
+
+if settings.AUTH_USER_MODEL:
+    post_save.connect(create_user_profile, sender=settings.AUTH_USER_MODEL)
+else:
+    from django.contrib.auth.models import User
+    post_save.connect(create_user_profile, sender=User)
