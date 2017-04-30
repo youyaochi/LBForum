@@ -3,6 +3,7 @@
 {% load lbforum_tags %}
 {% load lbforum_widget_tags %}
 {% load lbutils %}
+{% load avatar_tags %}
 
 {% if user.is_authenticated %}
   <div class="box">
@@ -12,7 +13,8 @@
           <tr>
             <td width="48" valign="top">
               <a href="{% url 'lbforum_profile' user_id=user.pk %}">
-                <img width="48px" height="48px" src="{{ user.lbforum_profile.get_avatar_url }}" alt=""/>
+                {% avatar user width="48px" height="48px" %}
+                <!--<img width="48px" height="48px" src="{{ user.lbforum_profile.get_avatar_url }}" alt=""/>-->
               </a>
             </td>
             <td width="10" valign="top"></td>

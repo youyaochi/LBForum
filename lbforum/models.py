@@ -271,7 +271,7 @@ class LBForumUserProfile(models.Model):
 
 def create_user_profile(sender, instance, created, **kwargs):
     if created:
-        LBForumUserProfile.objects.create(user=instance)
+        LBForumUserProfile.objects.create(user=instance, nickname=instance.username)
 
 
 def update_last_post(sender, instance, created, **kwargs):

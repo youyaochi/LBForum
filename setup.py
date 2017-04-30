@@ -24,6 +24,7 @@ install_requires = [
     'django-lbattachment==1.0.2',
     'django-lbutils==1.0.1',
     'djangorestframework==3.4.6',
+    'django-avatar==3.1.0',
 ]
 
 setup(name='LBForum',

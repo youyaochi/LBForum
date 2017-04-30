@@ -1,6 +1,7 @@
 {% load i18n %}
 {% load lbforum_filters %}
 {% load lbforum_tags %}
+{% load avatar_tags %}
 
 <div class="cell">
   <table width="100%" cellspacing="0" cellpadding="0" border="0">
@@ -8,7 +9,8 @@
       <tr>
         <td valign="top" class="avatar">
           <a class="dark" href="{% url 'lbforum_profile' user_id=t.posted_by.pk %}">
-            <img width="48px" height="48px" src="{{ t.posted_by.lbforum_profile.get_avatar_url }}" alt=""/>
+            {% avatar t.posted_by width="48px" height="48px" %}
+            <!--<img width="48px" height="48px" src="{{ t.posted_by.lbforum_profile.get_avatar_url }}" alt=""/>-->
           </a>
         </td>
         <td valign="top" style="padding-left: 12px">
